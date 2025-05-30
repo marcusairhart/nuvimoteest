@@ -4,10 +4,19 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/nuvimo-internal-site/",
+  base: "/nuvimoteest/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  build: {
+    outDir: "dist",
+    assetsDir: "assets",
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
     },
   },
 });
